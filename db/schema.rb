@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20180201221159) do
     t.string "level"
     t.integer "rate"
     t.string "picture"
+    t.string "user_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -61,6 +62,7 @@ ActiveRecord::Schema.define(version: 20180201221159) do
     t.float "rating"
     t.string "level"
     t.string "picture"
+    t.string "user_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

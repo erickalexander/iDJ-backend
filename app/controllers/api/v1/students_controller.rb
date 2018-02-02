@@ -29,6 +29,6 @@ class Api::V1::StudentsController < ApplicationController
 
   private
   def student_params
-    params.require(:student).permit(:name, :username, :location, :rating, :level, :picture)
+    params.require(:student).permit(:name, :username, :password, :location, :rating, :level, :picture)
   end
 end

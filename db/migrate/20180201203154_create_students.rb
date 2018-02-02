@@ -8,7 +8,7 @@ class CreateStudents < ActiveRecord::Migration[5.1]
       t.float :rating
       t.string :level
       t.string :picture
-
+      t.string :user_type
       t.timestamps
     end
   end

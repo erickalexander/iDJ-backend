@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :students
       resources :reservations
       resources :sessions
+      post '/auth', to: 'auth#create'
     end
   end
 end

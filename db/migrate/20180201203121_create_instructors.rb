@@ -9,6 +9,7 @@ class CreateInstructors < ActiveRecord::Migration[5.1]
       t.string :level
       t.integer :rate
       t.string :picture
+      t.string :user_type
 
       t.timestamps
     end
