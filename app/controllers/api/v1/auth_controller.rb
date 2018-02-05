@@ -4,12 +4,20 @@ class Api::V1::AuthController < ApplicationController
     student = Student.find_by(username: params[:username])
     instructor = Instructor.find_by(username: params[:username])
     # byebug
+
     if student && student.authenticate(params[:password])
-      render json: student
+      # student.store('token1', issue_token({id:student.id}))
+
+      # render json: student
+      render json: {student: student, token: issue_token(student)}
     elsif instructor && instructor.authenticate(params[:password])
-      render json: instructor
+      # instructor.store('token1', issue_token({id:instructor.id}))
+
+      # render json: instructor
+      render json: {instructor: instructor, token: issue_token(instructor)}
+
     else
-      render json: {error: 'user is invalid', status: 401}
+      render json: {error: 'user is invalid'}, status: 401
     end
   end
 
@@ -24,7 +32,7 @@ class Api::V1::AuthController < ApplicationController
     elsif instructor
       render json: instructor
     else
-      render json: {error: 'user is invalid', status: 401}
+      render json: {error: 'user is invalid'},  status: 401
     end
   end
 end
