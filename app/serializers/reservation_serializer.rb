@@ -1,5 +1,5 @@
 class ReservationSerializer < ActiveModel::Serializer
-  attributes :id, :student, :sessions
+  attributes :id, :student, :session
   belongs_to :student
-  has_many :sessions
+  belongs_to :session
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180201221159) do
+ActiveRecord::Schema.define(version: 20180201203702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,19 +29,12 @@ ActiveRecord::Schema.define(version: 20180201221159) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "reservation_sessions", force: :cascade do |t|
-    t.bigint "reservation_id"
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "student_id"
     t.bigint "session_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["reservation_id"], name: "index_reservation_sessions_on_reservation_id"
-    t.index ["session_id"], name: "index_reservation_sessions_on_session_id"
-  end
-
-  create_table "reservations", force: :cascade do |t|
-    t.bigint "student_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["session_id"], name: "index_reservations_on_session_id"
     t.index ["student_id"], name: "index_reservations_on_student_id"
   end
 
@@ -67,8 +60,7 @@ ActiveRecord::Schema.define(version: 20180201221159) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "reservation_sessions", "reservations"
-  add_foreign_key "reservation_sessions", "sessions"
+  add_foreign_key "reservations", "sessions"
   add_foreign_key "reservations", "students"
   add_foreign_key "sessions", "instructors"
 end
