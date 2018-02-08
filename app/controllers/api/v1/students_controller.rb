@@ -2,7 +2,7 @@ class Api::V1::StudentsController < ApplicationController
   def index
 
     @students = Student.all
-    render json: @students
+    render json: @students, include: 'reservations.session.instructor'
   end
 
   def create
