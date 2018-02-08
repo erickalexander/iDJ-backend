@@ -1,6 +1,6 @@
 class SessionSerializer < ActiveModel::Serializer
-  attributes :id, :start_time, :end_time, :instructor
+  attributes :id, :start_time, :end_time,:status, :completed_status, :instructor, :student
 
   belongs_to :instructor
-  has_many :reservations
+  belongs_to :student
 end

@@ -18,8 +18,11 @@ class Api::V1::SessionsController < ApplicationController
   end
 
   def update
+    #adds student to session to make it active
     @session = Session.find(params[:id])
-    @session.rating = params[:rating]
+    @session.student_id = params[:student_id]
+    @session.status = 'active'
+    @session.save
   end
 
   def destroy
@@ -29,6 +32,6 @@ class Api::V1::SessionsController < ApplicationController
 
   private
   def session_params
-    params.require(:session).permit(:start_time, :end_time, :instructor_id )
+    params.require(:session).permit(:start_time, :end_time, :instructor_id, :student_id )
   end
 end
