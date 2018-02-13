@@ -6,7 +6,7 @@ class Api::V1::StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.new(student_params)
+    @student = Student.new(username: params[:username], password: params[:password],name: params[:name], location: params[:location], level: params[:level], user_type: params[:user_type], picture: params[:picture])
     # student = Student.all.find{|i| i.id === @student.studentId}
     # @student.student_id = student
     if @student.save
@@ -27,8 +27,8 @@ class Api::V1::StudentsController < ApplicationController
     @student.destroy
   end
 
-  private
-  def student_params
-    params.require(:student).permit(:name, :username, :location, :rating, :level, :picture)
-  end
+  # private
+  # def student_params
+  #   params.require(:student).permit(:name, :username, :password, :location, :level, :picture, :user_type)
+  # end
 end

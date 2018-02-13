@@ -5,7 +5,7 @@ class CreateStudents < ActiveRecord::Migration[5.1]
       t.string :password_digest
       t.string :name
       t.string :location
-      t.float :rating
+      t.float :rating, :default => 0.0
       t.string :level
       t.string :picture
       t.string :user_type
