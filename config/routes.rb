@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :ratings
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api do
     namespace :v1 do
       resources :instructors
       resources :students
       resources :sessions
+      resource :ratings
       post '/auth', to: 'auth#create'
       get '/current_user', to: 'auth#show'
     end

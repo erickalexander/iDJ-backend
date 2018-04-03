@@ -3,4 +3,5 @@ class InstructorSerializer < ActiveModel::Serializer
 
   has_many :students
   has_many :sessions
+  has_many :ratings
 end
