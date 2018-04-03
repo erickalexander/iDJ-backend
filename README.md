@@ -2,7 +2,7 @@
 
 IDJ is a platform which connects aspiring DJs to professionals to receive mentorship and instruction. In the application, a user can either be a student or an instructor but not both. As an instructor, you can create sessions for students in the area to book. IDJ helps instructors keep track of when are their upcoming appointments with students as well as see how much money they have made since starting delivering mentorship and instruction in the platform. A student can book appointments with instructors in their area. Currently, students and instructors are matched through their location in this case just their borough.
 
-* Link to backend repo: https://github.com/erickalexander/idj-frontend
+* Link to frontend repo: https://github.com/erickalexander/idj-frontend
 * Link to Demo: https://www.youtube.com/watch?v=4tF7G13PdFE
 
 ## Getting Started
